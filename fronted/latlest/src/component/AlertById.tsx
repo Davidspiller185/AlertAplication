@@ -11,7 +11,7 @@ export function AlertById(){
     useEffect(() => {
         fetch(`http://localhost:3000/api/alerts/${id}`)
         .then(responce =>{if(!responce.ok){throw new Error("fetch failed to get alert by id")} return responce.json()})
-        .then(data => setAlert(data))
+        .then(data => setAlert(data.data))
         .catch(error => seterror(error))
     },[id])
     

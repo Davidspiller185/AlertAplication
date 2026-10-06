@@ -19,7 +19,7 @@ export function DeleteAlert(){
             }
         })
         .then(response =>{if(!response.ok){throw new Error("failed fetch to deleted")} return response.json()})
-        .then(data => remove(data))
+        .then(data => remove(data.data))
         .catch(error => setError(error))
     }
 
